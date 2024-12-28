@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "828869896995",
+    "firebase_url": "https://bartender-app-503a2-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bartender-app-503a2",
+    "storage_bucket": "bartender-app-503a2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828869896995:android:5b44fa624698c436fdfa96",
+        "android_client_info": {
+          "package_name": "com.example.doan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_2IjIzl1nTWEhW5PQnin72f4tgUS6xpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

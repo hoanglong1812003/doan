@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 // Main application file
@@ -14,11 +15,18 @@ import 'screens/share_recipe_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/about_support_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(BartenderApp());
 }
 
-class BartenderApp extends StatelessWidget {
+class BartenderApp extends StatefulWidget {
+  @override
+  _BartenderAppState createState() => _BartenderAppState();
+}
+
+class _BartenderAppState extends State<BartenderApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,6 +52,3 @@ class BartenderApp extends StatelessWidget {
     );
   }
 }
-
-
-

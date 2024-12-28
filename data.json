@@ -1,0 +1,102 @@
+{
+  "categories": {
+    "category_id_1": {
+      "name": "Cocktails",
+      "description": "Mixed alcoholic drinks that are perfect for parties."
+    },
+    "category_id_2": {
+      "name": "Mocktails",
+      "description": "Non-alcoholic mixed drinks for all ages."
+    },
+    "category_id_3": {
+      "name": "Cà phê",
+      "description": "Cà phê nguyên chất, đậm đà."
+    },
+    "category_id_4": {
+      "name": "Trà",
+      "description": "Các loại trà thảo mộc và trà đen, trà xanh."
+    },
+    "category_id_5": {
+      "name": "Sinh tố",
+      "description": "Sinh tố trái cây tươi mát."
+    },
+    "category_id_6": {
+      "name": "Khác",
+      "description": "Các loại đồ uống khác không thuộc các thể loại trên."
+    }
+  },
+  "recipes": {
+    "recipe_id_1": {
+      "name": "Mojito",
+      "category_id": "category_id_1",
+      "ingredients": "Bạc hà, Chanh xanh, Rượu rum, Nước soda",
+      "instructions": "Lá bạc hà và đường được nghiền nhẹ. Thêm chanh xanh, rượu rum và nước soda. Khuấy đều.",
+      "image_path": "https://www.saveur.com/uploads/2007/02/SAVEUR_Mojito_1149-Edit-scaled.jpg?auto=webp&auto=webp&optimize=high&quality=70&width=1440"
+    },
+    "recipe_id_2": {
+      "name": "Espresso Martini",
+      "category_id": "category_id_1",
+      "ingredients": "Espresso, Vodka",
+      "instructions": "Trộn espresso và vodka trong một ly pha chế. Lắc đều và lọc ra ly.",
+      "image_path": "https://hips.hearstapps.com/hmg-prod/images/espresso-martini-index-6613f83abcb4d.jpg?crop=0.6666666666666666xw:1xh;center,top&resize=1200:*"
+    },
+    "recipe_id_3": {
+      "name": "Green Tea Smoothie",
+      "category_id": "category_id_5",
+      "ingredients": "Trà xanh, Mật ong, Sữa",
+      "instructions": "Trộn tất cả nguyên liệu cho đến khi mịn. Uống ngay lập tức.",
+      "image_path": "https://www.jessicagavin.com/wp-content/uploads/2016/12/healthy-green-smoothie-with-matcha-tea-1200.jpg"
+    }
+  },
+  "favorites": {
+    "favorite_id_1": {
+      "user_id": "user_id_1",
+      "recipe_id": "recipe_id_1",
+      "added_at": "2024-12-28T10:00:00Z"
+    },
+    "favorite_id_2": {
+      "user_id": "user_id_2",
+      "recipe_id": "recipe_id_3",
+      "added_at": "2024-12-28T11:00:00Z"
+    }
+  },
+  "basic_tutorials": {
+    "tutorial_id_1": {
+      "title": "Cách trộn nguyên liệu",
+      "content": "Trộn nhẹ các nguyên liệu.",
+      "created_at": "2024-12-28T09:00:00Z"
+    },
+    "tutorial_id_2": {
+      "title": "How to Shake Properly",
+      "content": "Lắc với đá trong 15 giây.",
+      "created_at": "2024-12-28T10:00:00Z"
+    },
+    "tutorial_id_3": {
+      "title": "Cách đo lường",
+      "content": "Sử dụng các công cụ đo lường thích hợp.",
+      "created_at": "2024-12-28T11:00:00Z"
+    }
+  },
+  "drink_suggestions": {
+    "suggestion_id_1": {
+      "recipe_id": "recipe_id_1",
+      "suggestion_reason": "Perfect for an evening gathering."
+    },
+    "suggestion_id_2": {
+      "recipe_id": "recipe_id_2",
+      "suggestion_reason": "Great for a tropical-themed party."
+    }
+  },
+  "users": {
+    "user_id_1": {
+      "username": "abc",
+      "email": "abc@example.com",
+      "password": "123456"
+    },
+    "user_id_2": {
+      "username": "aaa",
+      "email": "aaa@example.com",
+      "password_hash": "123456"
+    }
+  }
+}
