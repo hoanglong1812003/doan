@@ -10,7 +10,7 @@ class CreateRecipeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tạo công thức mới'),
+        title: Text('Tạo công thức mớ'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
