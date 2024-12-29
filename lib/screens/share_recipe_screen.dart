@@ -6,7 +6,7 @@ class ShareRecipeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Share Recipe'),
+        title: Text('Chia sẽ công thức'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -14,7 +14,7 @@ class ShareRecipeScreen extends StatelessWidget {
             // Logic to share the recipe
             // Example: Share via social media or QR code
           },
-          child: Text('Share Recipe'),
+          child: Text('Chia sẽ công thức'),
         ),
       ),
     );

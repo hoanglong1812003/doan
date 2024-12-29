@@ -12,7 +12,7 @@ class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorites'),
+        title: Text('Mục yêu thích'),
       ),
       body: ListView.builder(
         itemCount: favoriteRecipes.length,

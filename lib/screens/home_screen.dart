@@ -25,56 +25,56 @@ class HomeScreen extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
+            title: Text('Mục yêu thích'),
             onTap: () {
               Navigator.pushNamed(context, '/favorites');
             },
           ),
           ListTile(
             leading: Icon(Icons.add),
-            title: Text('Create Recipe'),
+            title: Text('Tạo công thức'),
             onTap: () {
               Navigator.pushNamed(context, '/create-recipe');
             },
           ),
           ListTile(
             leading: Icon(Icons.school),
-            title: Text('Basic Tutorials'),
+            title: Text('Hướng dẫn cơ bản'),
             onTap: () {
               Navigator.pushNamed(context, '/basic-tutorials');
             },
           ),
           ListTile(
             leading: Icon(Icons.lightbulb),
-            title: Text('Drink Suggestions'),
+            title: Text('Gợi ý đồ uống'),
             onTap: () {
               Navigator.pushNamed(context, '/drink-suggestions');
             },
           ),
           ListTile(
             leading: Icon(Icons.calculate),
-            title: Text('Ingredient Calculator'),
+            title: Text('Máy tính nguyên liệu'),
             onTap: () {
               Navigator.pushNamed(context, '/ingredient-calculator');
             },
           ),
           ListTile(
             leading: Icon(Icons.share),
-            title: Text('Share Recipe'),
+            title: Text('Chia sẽ công thức'),
             onTap: () {
               Navigator.pushNamed(context, '/share-recipe');
             },
           ),
           ListTile(
             leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            title: Text('Cài đặt'),
             onTap: () {
               Navigator.pushNamed(context, '/settings');
             },
           ),
           ListTile(
             leading: Icon(Icons.info),
-            title: Text('About & Support'),
+            title: Text('Giới thiệu & Hỗ trợ'),
             onTap: () {
               Navigator.pushNamed(context, '/about-support');
             },
