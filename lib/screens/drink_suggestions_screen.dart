@@ -14,8 +14,7 @@ class DrinkSuggestionsScreen extends StatelessWidget {
     {
       'name': 'Green Tea Smoothie',
       'thành phần': ['Trà xanh', 'Honey', 'Milk']
-    },
-  ];
+    },  ];
 
   @override
   Widget build(BuildContext context) {
