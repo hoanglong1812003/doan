@@ -15,7 +15,7 @@ class _IngredientCalculatorScreenState extends State<IngredientCalculatorScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ingredient Calculator'),
+        title: Text('Tính toán gia vị'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -24,7 +24,7 @@ class _IngredientCalculatorScreenState extends State<IngredientCalculatorScreen>
             TextField(
               controller: servingsController,
               decoration: InputDecoration(
-                labelText: 'Number of Servings',
+                labelText: 'Số lượng khẩu phần',
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
@@ -35,17 +35,17 @@ class _IngredientCalculatorScreenState extends State<IngredientCalculatorScreen>
               },
             ),
             SizedBox(height: 20),
-            Text('Ingredients Adjusted:'),
+            Text('Nguyên liệu đã điều chỉnh:'),
             SizedBox(height: 10),
             Expanded(
               child: ListView(
                 children: [
                   ListTile(
-                    title: Text('Ingredient 1'),
+                    title: Text('Nguyên liệu 1'),
                     trailing: Text('${(ratio * 50).toStringAsFixed(1)} g'),
                   ),
                   ListTile(
-                    title: Text('Ingredient 2'),
+                    title: Text('Nguyên liệu 2'),
                     trailing: Text('${(ratio * 30).toStringAsFixed(1)} ml'),
                   ),
                 ],

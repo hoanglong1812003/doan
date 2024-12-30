@@ -6,24 +6,24 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: Text('Cài đặt'),
       ),
       body: ListView(
         children: [
           ListTile(
-            title: Text('Change Language'),
+            title: Text('Thay đổi ngôn ngữ'),
             onTap: () {
               // Navigate to language selection screen or open dialog
             },
           ),
           ListTile(
-            title: Text('Switch Theme'),
+            title: Text('Thay đổi giao diện'),
             onTap: () {
               // Logic to toggle between light and dark mode
             },
           ),
           ListTile(
-            title: Text('Change Units'),
+            title: Text('Chuyển đổi đơn vị'),
             onTap: () {
               // Logic to change measurement units
             },

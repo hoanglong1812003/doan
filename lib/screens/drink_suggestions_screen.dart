@@ -21,7 +21,7 @@ class DrinkSuggestionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Drink Suggestions'),
+        title: Text('Gợi ý đồ uống'),
       ),
       body: ListView.builder(
         itemCount: drinks.length,
