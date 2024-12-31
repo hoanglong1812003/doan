@@ -89,7 +89,7 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
 
             // Hiển thị thành phần
             Text(
-              'Ingredients:',
+              'Nguyên liệu:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 5),
@@ -103,7 +103,7 @@ class _RecipeDetailsScreenState extends State<RecipeDetailsScreen> {
             SizedBox(height: 20),
             // Hiển thị hướng dẫn
             Text(
-              'Instructions:',
+              'Giới thiệu:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 5),

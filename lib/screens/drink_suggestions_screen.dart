@@ -28,7 +28,7 @@ class DrinkSuggestionsScreen extends StatelessWidget {
           return ListTile(
             title: Text(drinks[index]['name']),
             subtitle:
-                Text('Ingredients: ${drinks[index]['ingredients'].join(', ')}'),
+                Text('Nguyên liệu: ${drinks[index]['ingredients'].join(', ')}'),
             onTap: () {
               Navigator.pushNamed(context, '/recipe-details',
                   arguments: drinks[index]['name']);
