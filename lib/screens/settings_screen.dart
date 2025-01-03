@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class SettingsScreen extends StatelessWidget {
+  final ThemeMode themeMode;
+  final Function(ThemeMode) onThemeChanged;
+
+  SettingsScreen({required this.themeMode, required this.onThemeChanged});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +24,7 @@ class SettingsScreen extends StatelessWidget {
           ListTile(
             title: Text('changeTheme'.tr()), // Dịch chuỗi "changeTheme"
             onTap: () {
-              // Logic để thay đổi giao diện (light/dark mode)
+              _showThemeDialog(context);
             },
           ),
           ListTile(
@@ -54,6 +59,37 @@ class SettingsScreen extends StatelessWidget {
                 title: Text('Tiếng Việt'),
                 onTap: () {
                   context.setLocale(Locale('vi')); // Chuyển ngôn ngữ sang tiếng Việt
+                  Navigator.of(context).pop(); // Đóng dialog
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  // Hàm hiển thị Dialog để chọn chế độ sáng/tối
+  void _showThemeDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('chooseTheme'.tr()), // Dịch chuỗi "chooseTheme"
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                title: Text('Light Mode'),
+                onTap: () {
+                  onThemeChanged(ThemeMode.light); // Đổi giao diện sang sáng
+                  Navigator.of(context).pop(); // Đóng dialog
+                },
+              ),
+              ListTile(
+                title: Text('Dark Mode'),
+                onTap: () {
+                  onThemeChanged(ThemeMode.dark); // Đổi giao diện sang tối
                   Navigator.of(context).pop(); // Đóng dialog
                 },
               ),

@@ -1,8 +1,8 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-// Các màn hình
 import 'screens/home_screen.dart';
 import 'screens/search_screen.dart';
 import 'screens/recipe_details_screen.dart';
@@ -19,31 +19,56 @@ import 'screens/about_support_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await EasyLocalization.ensureInitialized(); // Khởi tạo EasyLocalization
+  await EasyLocalization.ensureInitialized();
+
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? savedTheme = prefs.getString('theme');
+  ThemeMode initialThemeMode = savedTheme == ThemeMode.dark.toString()
+      ? ThemeMode.dark
+      : ThemeMode.light;
+
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('vi')], // Các ngôn ngữ hỗ trợ
-      path: 'assets/translations', // Đường dẫn tới các tệp JSON
-      fallbackLocale: Locale('vi'), // Ngôn ngữ mặc định
-      child: BartenderApp(),
+      supportedLocales: [Locale('en'), Locale('vi')],
+      path: 'assets/translations',
+      fallbackLocale: Locale('vi'),
+      child: MyApp(initialThemeMode),
     ),
   );
 }
 
-class BartenderApp extends StatefulWidget {
+class MyApp extends StatefulWidget {
+  final ThemeMode initialThemeMode;
+
+  MyApp(this.initialThemeMode);
+
   @override
-  _BartenderAppState createState() => _BartenderAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _BartenderAppState extends State<BartenderApp> {
+class _MyAppState extends State<MyApp> {
+  late ThemeMode _themeMode;
+
+  @override
+  void initState() {
+    super.initState();
+    _themeMode = widget.initialThemeMode;
+  }
+
+  // Hàm lưu lại theme vào SharedPreferences
+  void _saveTheme(ThemeMode themeMode) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('theme', themeMode.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Bartender Guide',
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
-      locale: context.locale, // Lấy locale hiện tại
+      theme: ThemeData.light(), // Chủ đề sáng
+      darkTheme: ThemeData.dark(), // Chủ đề tối
+      themeMode: _themeMode, // Áp dụng chế độ sáng/tối
+      locale: context.locale,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       initialRoute: '/',
@@ -58,7 +83,15 @@ class _BartenderAppState extends State<BartenderApp> {
         '/drink-suggestions': (context) => DrinkSuggestionsScreen(),
         '/ingredient-calculator': (context) => IngredientCalculatorScreen(),
         '/share-recipe': (context) => ShareRecipeScreen(),
-        '/settings': (context) => SettingsScreen(),
+        '/settings': (context) => SettingsScreen(
+          themeMode: _themeMode,
+          onThemeChanged: (newTheme) {
+            setState(() {
+              _themeMode = newTheme;
+            });
+            _saveTheme(newTheme); // Lưu theme khi thay đổi
+          },
+        ),
         '/about-support': (context) => AboutSupportScreen(),
       },
     );
