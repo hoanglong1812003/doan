@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
-// Main application file
+// Các màn hình
 import 'screens/home_screen.dart';
 import 'screens/search_screen.dart';
 import 'screens/recipe_details_screen.dart';
@@ -18,7 +19,15 @@ import 'screens/about_support_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(BartenderApp());
+  await EasyLocalization.ensureInitialized(); // Khởi tạo EasyLocalization
+  runApp(
+    EasyLocalization(
+      supportedLocales: [Locale('en'), Locale('vi')], // Các ngôn ngữ hỗ trợ
+      path: 'assets/translations', // Đường dẫn tới các tệp JSON
+      fallbackLocale: Locale('vi'), // Ngôn ngữ mặc định
+      child: BartenderApp(),
+    ),
+  );
 }
 
 class BartenderApp extends StatefulWidget {
@@ -34,6 +43,9 @@ class _BartenderAppState extends State<BartenderApp> {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
+      locale: context.locale, // Lấy locale hiện tại
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),

@@ -44,7 +44,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Thể loại'),
+        title: Text('Loại'),
       ),
       body: categories.isEmpty
           ? Center(

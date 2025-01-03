@@ -1,0 +1,21 @@
+{
+  "settings": "Settings",
+  "changeLanguage": "Change Language",
+  "changeTheme": "Change Theme",
+  "changeUnits": "Change Units",
+  "recipeDetails": "Recipe Details",
+  "ingredients": "Ingredients",
+  "instructions": "Instructions",
+  "chooseLanguage": "Choose Language",
+  "basicTutorials": "Basic Tutorials",
+  "createRecipe": "Create Recipe",
+  "categories": "Categories",
+  "cocktailGuide": "Cocktail Guide",
+  "ingredientCalculator": "Ingredient Calculator",
+  "drinkSuggestions": "Drink Suggestions",
+  "search": "Search",
+  "favorites": "Favorites",
+  "shareRecipe": "Share Recipe",
+  "aboutSupport": "About & Support"
+
+}
