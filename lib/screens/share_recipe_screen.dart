@@ -1,4 +1,5 @@
 // screens/share_recipe_screen.dart
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ShareRecipeScreen extends StatelessWidget {
@@ -6,7 +7,7 @@ class ShareRecipeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Share Recipe'),
+        title: Text('shareRecipe'.tr()),
       ),
       body: Center(
         child: ElevatedButton(
@@ -14,7 +15,7 @@ class ShareRecipeScreen extends StatelessWidget {
             // Logic to share the recipe
             // Example: Share via social media or QR code
           },
-          child: Text('Share Recipe'),
+          child: Text('shareRecipe'.tr()),
         ),
       ),
     );
